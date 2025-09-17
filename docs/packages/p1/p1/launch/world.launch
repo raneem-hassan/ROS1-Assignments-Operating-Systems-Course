@@ -1,0 +1,12 @@
+<launch>
+    <rosparam command = "load" file = "$(find p1)/config/params.yaml"/>
+    <param name = "robot_description" command = "$(find xacro)/xacro '$(find p1)/xacro/robot.xacro'"/>
+    <node name = "rviz" pkg = "rviz" type = "rviz" args="-d $(find p1)/config/rviz.rviz"/>
+    <!--      -->
+    <node name = "robot_state_publisher" pkg ="robot_state_publisher" type = "robot_state_publisher" output = "screen"/>
+    <node name = "joint_state_publisher_gui" pkg ="joint_state_publisher_gui" type = "joint_state_publisher_gui" output = "screen"/>
+    <node name = "EEpose" pkg = "p1" type = "EEpose.py" output="screen"/>
+    <node name = "marker" pkg = "p1" type = "marker.py" output="screen"/>
+    <node name = "path" pkg = "p1" type = "path.py" output="screen"/>
+    <node name = "server" pkg = "p1" type = "server.py" output="screen"/>
+</launch>

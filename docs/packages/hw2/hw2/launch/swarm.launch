@@ -1,0 +1,5 @@
+<launch>
+  <rosparam command="load" file="$(find hw2)/config/parameters.yaml" />
+  <node pkg="turtlesim" type="turtlesim_node" name="turtle" respawn="true" />
+  <node pkg="hw2" type="swarm.py" name="swarm" />
+</launch>

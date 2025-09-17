@@ -1,0 +1,15 @@
+<?xml version = "1.0"?>
+<robot name = "arm" xmlns:xacro="https://www.ros.org/wiki/xacro">
+<xacro:property name = "base_L" value = "0.1"/>
+<xacro:property name = "base_R" value = "0.5"/>
+
+<xacro:property name = "L1" value = "1"/>
+<xacro:property name = "R1" value = "0.1"/>
+
+<xacro:property name = "L2" value = "1"/>
+<xacro:property name = "R2" value = "0.1"/>
+
+<xacro:property name = "L3" value = "1.3"/>
+<xacro:property name = "R3" value = "0.05"/>
+
+</robot>

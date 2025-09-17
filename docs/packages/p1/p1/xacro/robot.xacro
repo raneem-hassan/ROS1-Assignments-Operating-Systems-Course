@@ -1,0 +1,76 @@
+<?xml version = "1.0"?>
+<robot name = "arm" xmlns:xacro="https://www.ros.org/wiki/xacro">
+<xacro:include filename = "$(find p1)/xacro/variables.xacro"/>
+<link name = "base">
+    <visual>
+        <geometry>
+            <cylinder radius = "${base_R}" length = "${base_L}" />
+        </geometry>
+        <origin xyz = "0 0 ${-base_L /2}"/>
+        <material name = "c1">
+            <color rgba = "0.5 0.5 0 1"/>
+        </material>
+    </visual> 
+</link>
+
+<link name = "link1">
+    <visual>
+        <geometry>
+            <cylinder radius = "${R1}" length = "${L1}"/>
+        </geometry>
+        <origin xyz = " 0 ${L1 /2} 0" rpy = "1.57 0 0"/>
+        <material name = "c2">
+            <color rgba = "0.5 0.0 0.5 0.7"/>
+        </material>
+    </visual> 
+</link>
+
+<joint name = "j1" type = "revolute">
+    <parent link = "base"/>
+    <child link = "link1"/>
+    <origin xyz = "0 0 0" rpy = "1.57 0 0"/>
+    <limit effort = "100" velocity = "1" upper = "1.57" lower = "-1.57" />
+    <axis xyz = "0 0 1"/>
+</joint>
+
+<link name = "link2" >
+    <visual>
+        <geometry>
+            <cylinder radius = "${R2}" length = "${L2}"/>
+        </geometry>
+    <origin xyz = "0 ${L2 /2} 0 " rpy = "1.57 0 0"/>
+    <material name = "c3">
+        <color rgba = "0 0 1 0.7"/>
+</material>
+</visual>
+</link>
+
+<joint name = "j2" type = "revolute">
+    <parent link = "link1"/>
+    <child link = "link2" />
+    <origin xyz = "0 ${L1} 0" rpy = "0 0 0"/>
+    <limit effort = "100" velocity = "1" upper = "1.57" lower = "-1.57"/>
+    <axis xyz = "0 0 1"/>
+</joint>
+
+<link name = "link3">
+    <visual>
+        <geometry>
+            <cylinder radius = "${R3}" length = "${L3}"/>
+        </geometry>
+    <origin xyz = "0 0 0" rpy = "0 0 0"/> 
+    <material name = "c4">
+        <color rgba = "0.5 0.5 0 1"/> 
+    </material>
+    </visual>
+</link>
+<joint name = "j3" type = "prismatic">
+    <parent link = "link2"/>
+    <child link = "link3"/>
+    <origin xyz = "0 ${L2/2} 0" rpy = "-1.57 0 0"/>
+    <limit effort = "200" velocity = "50" upper = "0.4" lower = "0.7"/>
+    <axis xyz = "0 0 1"/>
+</joint>
+
+
+</robot>
