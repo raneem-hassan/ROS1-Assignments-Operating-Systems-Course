@@ -6,14 +6,13 @@ This repository contains all the ROS1 assignments completed as part of the **Ope
 
 ## Repository Structure
 
-- `hw1/` – Two-wheeled ground robot control with target tracking.
-- `hw2/` – Swarm of turtles moving in synchronized circular paths.
-- `hw3/` – RViz environment visualization and path planning.
-- `hw4/` – Sphere altitude control with Arduino potentiometer input.
-- `exam/` – URDF modeling of RRP planar manipulator and end-effector visualization.
+- [Assignment 1 – Two-wheeled ground robot control with target tracking.](#assignment-1-two-wheeled-ground-robot-control)
+- [Assignment 2 – Swarm of turtles moving in synchronized circular paths.](#assignment-2-turtle-swarm-circular-motion)
+- [Assignment 3 – RViz environment visualization and path planning.](#assignment-3-rviz-path-planning)
+- [Assignment 4 – Sphere altitude control with Arduino potentiometer input.](#assignment-4-sphere-altitude-control-via-arduino)
+- [Exam Project – URDF modeling of RRP planar manipulator and end-effector visualization.](#exam-project-rrp-planar-robot-manipulator)
 
 ---
-
 ## Assignment 1: Two-Wheeled Ground Robot Control
 
 **Objective:**  
